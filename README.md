@@ -41,3 +41,14 @@ sudo raspi-config
 # 3. 서버 실행
 python3 app.py
 # 브라우저에서 http://raspberrypi.local:5000 접속
+
+---
+📁 폴더 구조
+
+smart-pot/
+├── app.py                  # Flask 메인 서버
+├── camera_capture.py       # 카메라 촬영 모듈
+├── templates/
+│   └── index.html          # 센서 데이터 + 이미지 웹 UI
+├── static/
+│   └── cam.jpg             # 캡처된 화분 이미지

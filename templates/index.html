@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>스마트 화분 센서 대시보드</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f3f3f3;
+                text-align: center;
+                padding: 40px;
+            }
+            h1 {
+                color: #2c3e50;
+            }
+            .sensor-box {
+                background-color: white;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 20px auto;
+                width: 300px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .button-box {
+                margin-top: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 6px;
+                border: none;
+                background-color: #3498db;
+                color: white;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>🌱 스마트 화분 상태</h1>
+
+        <div class="sensor-box">
+            <p>🌡️ 온도: <strong>{{ temp }}</strong> °C</p>
+            <p>💧 습도: <strong>{{ humid }}</strong> %</p>
+            <p>☀️ 조도: <strong>{{ light }}</strong> lux</p>
+            <form action="/pump" method="post">
+                <button type="submit">💧 물 주기</button>
+            </form>
+        </div>
+        <h2>📷 현재 화분 이미지</h2>
+        <img src="/static/cam.jpg" alt="실시간 화분 이미지" />
+
+        <p>페이지는 새로고침 시 최신 상태로 갱신됩니다.</p>
+    </body>
+</html>
